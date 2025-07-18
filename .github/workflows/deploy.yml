@@ -3,14 +3,14 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # Adjust if your default branch is different
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -27,5 +27,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT_TOKEN }}  # Your Personal Access Token secret
           publish_dir: ./build
