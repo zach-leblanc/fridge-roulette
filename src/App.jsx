@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const API_KEY = '17c8551455484b16862828a983ef49d4Y';
+const API_KEY = 17c8551455484b16862828a983ef49d4Y;
 
 function App() {
   const [ingredients, setIngredients] = useState('');
