@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 
-const API_KEY = "17c8551455484b16862828a983ef49d4Y";
+const API_KEY = "17c8551455484b16862828a983ef49d4"; // Make sure it's valid
 
 function App() {
   const [ingredients, setIngredients] = useState('');
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const fetchRecipes = async () => {
     if (!ingredients.trim()) return;
     setLoading(true);
+    setError('');
     setRecipes([]);
 
     try {
@@ -18,10 +20,24 @@ function App() {
           ingredients
         )}&number=10&apiKey=${API_KEY}`
       );
+
+      if (!res.ok) {
+        const message = res.status === 401
+          ? 'Unauthorized – check your API key'
+          : `API error: ${res.status}`;
+        throw new Error(message);
+      }
+
       const data = await res.json();
+
+      if (!Array.isArray(data)) {
+        throw new Error('Unexpected response format from API.');
+      }
+
       setRecipes(data);
     } catch (err) {
       console.error('Error fetching recipes:', err);
+      setError(err.message || 'Something went wrong.');
     }
 
     setLoading(false);
@@ -47,6 +63,10 @@ function App() {
         >
           {loading ? 'Browsing through your fridge...' : 'Find Recipes'}
         </button>
+
+        {error && (
+          <p className="text-red-600 mt-4 text-center">{error}</p>
+        )}
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
