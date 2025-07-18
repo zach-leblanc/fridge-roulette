@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.c95dcd9b.css",
-    "main.js": "/static/js/main.877efe15.js",
-    "index.html": "/index.html",
-    "main.c95dcd9b.css.map": "/static/css/main.c95dcd9b.css.map",
-    "main.877efe15.js.map": "/static/js/main.877efe15.js.map"
+    "main.css": "/fridge-roulette/static/css/main.c95dcd9b.css",
+    "main.js": "/fridge-roulette/static/js/main.877efe15.js",
+    "index.html": "/fridge-roulette/index.html",
+    "main.c95dcd9b.css.map": "/fridge-roulette/static/css/main.c95dcd9b.css.map",
+    "main.877efe15.js.map": "/fridge-roulette/static/js/main.877efe15.js.map"
   },
   "entrypoints": [
     "static/css/main.c95dcd9b.css",
