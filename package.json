@@ -2,7 +2,7 @@
   "name": "fridge-roulette",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://your-username.github.io/your-repo-name",
+  "homepage": "https://zach-leblanc.github.io/fridge-roulette",
   "dependencies": {
     "autoprefixer": "^10.4.0",
     "gh-pages": "^5.0.0",
